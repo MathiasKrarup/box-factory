@@ -25,5 +25,6 @@ export class BoxesComponent implements OnInit {
   async deleteBox(id: any) {
     const box = await this.http.deleteBox(id);
     this.boxes = this.boxes.filter(item => item.id != box.id)
+    await this.ngOnInit();
   }
 }

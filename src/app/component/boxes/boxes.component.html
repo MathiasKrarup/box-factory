@@ -11,7 +11,7 @@
           <p><strong>Width (meters):</strong> {{item.width}}</p>
           <p><strong>Description:</strong> {{item.description}}</p>
           <button class="fa fa-pen btnUpdate">Update box</button>
-          <button class="fa fa-trash btnDelete"> Delete box</button>
+          <button class="fa fa-trash btnDelete" (click)="deleteBox(item.id)"> Delete box</button>
         </div>
       </ng-container>
     </div>

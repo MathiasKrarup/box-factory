@@ -23,7 +23,7 @@ export class CreationsComponent implements OnInit {
     console.log(boxes)
   }
 
-  async createProduct() {
+  async createBox() {
     let dto = {
       boxName: this.boxName,
       heigth: this.heigth,
@@ -33,7 +33,7 @@ export class CreationsComponent implements OnInit {
       description: this.description
 
     }
-    const result = await this.http.createProduct(dto);
+    const result = await this.http.createBox(dto);
     console.log(result)
   }
 }

@@ -24,8 +24,19 @@ export class HttpService {
     return httpResult.data;
   }
 
+  async getBoxById(id: number){
+    const httpResponse = await customAxios.get<any>('BoxFactory/'+id);
+    return httpResponse.data;
+  }
+
+
+  async updateBox(id: any, dto: {boxName: string; heigth: number; length: number; width: number; imageUrl: string; description: string; }) {
+    const httpResult = await customAxios.put('BoxFactory/Edit/'+id, dto);
+    return httpResult.data;
+  }
+
   async deleteBox(id: any) {
-    const httpsResult = await customAxios.delete('BoxFactory/'+id);
-    return httpsResult.data;
+    const httpResult = await customAxios.delete('BoxFactory/'+id);
+    return httpResult.data;
   }
 }

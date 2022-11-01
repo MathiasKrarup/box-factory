@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {HttpService} from "../../service/http.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-creations',
@@ -16,7 +17,7 @@ export class CreationsComponent implements OnInit {
 
 
 
-  constructor(private http: HttpService) { }
+  constructor(private http: HttpService, private router: Router) { }
 
   async ngOnInit() {
     const boxes = await this.http.getBoxes();
@@ -35,5 +36,10 @@ export class CreationsComponent implements OnInit {
     }
     const result = await this.http.createBox(dto);
     console.log(result)
+    await this.router.navigateByUrl('/boxes');
+  }
+
+  close() {
+   this.router.navigateByUrl('/boxes');
   }
 }

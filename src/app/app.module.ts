@@ -13,8 +13,16 @@ import {MatButtonModule} from "@angular/material/button";
 import {MAT_DIALOG_DATA, MatDialogModule} from "@angular/material/dialog";
 import {BoxesComponent} from "./component/boxes/boxes.component";
 import { PopupComponent } from './component/popup/popup.component';
+import { LoginComponent } from './component/login/login.component';
+import {RouterModule, Routes} from "@angular/router";
 
-
+const routes: Routes = [{
+  path: 'boxes', component: BoxesComponent
+},
+  {
+    path: 'login', component: LoginComponent
+  }
+]
 
 
 
@@ -25,9 +33,11 @@ import { PopupComponent } from './component/popup/popup.component';
     HeaderComponent,
     routingComponents,
     BoxesComponent,
-    PopupComponent
+    PopupComponent,
+    LoginComponent
   ],
   imports: [
+    RouterModule.forRoot(routes),
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,

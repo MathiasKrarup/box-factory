@@ -3,7 +3,10 @@ import axios from "axios";
 
 
 export const customAxios = axios.create({
-  baseURL: 'https://localhost:7087'
+  baseURL: 'https://localhost:7087',
+  headers: {
+    Authorization: `Bearer ${localStorage.getItem('token')}`
+  }
 });
 
 @Injectable({
@@ -37,6 +40,11 @@ export class HttpService {
 
   async deleteBox(id: any) {
     const httpResult = await customAxios.delete('BoxFactory/'+id);
+    return httpResult.data;
+  }
+
+  async login(dto: any) {
+    const httpResult = await customAxios.post("auth/login", dto);
     return httpResult.data;
   }
 }

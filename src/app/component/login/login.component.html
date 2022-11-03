@@ -1,12 +1,9 @@
-
-  <mat-form-field class="example-full-width" appearance="fill">
-    <mat-label>Userename</mat-label>
-    <input [(ngModel)]="username" matInput placeholder="insert username">
-  </mat-form-field>
-  <br>
-  <mat-form-field class="example-full-width" appearance="fill">
-    <mat-label>Password</mat-label>
-    <input [(ngModel)]="password" matInput type="password" placeholder="insert password">
-  </mat-form-field>
-
-  <button mat-raised-button (click)="login()">Log in</button>
+<div class="wrapper">
+  <form class="form-signin">
+    <h2 class="form-signin-heading">Please login here</h2>
+    <input [(ngModel)]="username" type="text" class="form-control" placeholder="Username" required="" autofocus="" />
+    <br>
+    <input [(ngModel)]="password" type="password" class="form-control" placeholder="Password" required=""/>
+    <button class="btn btn-lg btn-primary btn-block" (click)="login()">Login</button>
+  </form>
+</div>

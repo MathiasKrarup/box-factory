@@ -15,6 +15,8 @@ import {BoxesComponent} from "./component/boxes/boxes.component";
 import { PopupComponent } from './component/popup/popup.component';
 import { LoginComponent } from './component/login/login.component';
 import {RouterModule, Routes} from "@angular/router";
+import {MatToolbarModule} from "@angular/material/toolbar";
+import {MatCardModule} from "@angular/material/card";
 
 const routes: Routes = [{
   path: 'boxes', component: BoxesComponent
@@ -47,7 +49,9 @@ const routes: Routes = [{
     MatInputModule,
     MatButtonModule,
     MatDialogModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatToolbarModule,
+    MatCardModule
   ],
   providers: [
 

@@ -17,12 +17,15 @@ import { LoginComponent } from './component/login/login.component';
 import {RouterModule, Routes} from "@angular/router";
 import {MatToolbarModule} from "@angular/material/toolbar";
 import {MatCardModule} from "@angular/material/card";
+import * as path from "path";
 
 const routes: Routes = [{
   path: 'boxes', component: BoxesComponent
 },
   {
     path: 'login', component: LoginComponent
+  }, {
+    path: '', redirectTo: 'login', pathMatch: "full"
   }
 ]
 

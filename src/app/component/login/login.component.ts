@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import {Routes} from "@angular/router";
 import {BoxesComponent} from "../boxes/boxes.component";
 import {HttpService} from "../../service/http.service";
+import {Router} from "@angular/router";
+
 
 const routes: Routes = [{
   path: 'boxes', component: BoxesComponent
@@ -16,7 +18,7 @@ export class LoginComponent implements OnInit {
   username: any;
   password: any;
 
-  constructor(private http: HttpService) { }
+  constructor(private http: HttpService, private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -27,6 +29,7 @@ export class LoginComponent implements OnInit {
       password: this.password
     }
     var token = await this.http.login(dto);
-    localStorage.setItem("token", token)
+    localStorage.setItem('token', token)
+    await this.router.navigateByUrl("/boxes");
   }
 }

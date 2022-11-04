@@ -16,6 +16,7 @@ export class HttpService {
 
   constructor() { }
 
+
   async getBoxes() {
     const httpResponse = await customAxios.get<any>('BoxFactory');
     return httpResponse.data;
